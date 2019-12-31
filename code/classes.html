@@ -1,0 +1,35 @@
+<script>
+
+class Person {
+  constructor(name,last) {
+    this.name = name;
+    this.last = last;
+  }
+
+  walk() {
+    console.log(this.name +this.last+ ' is walking.');
+  }
+
+  smile(){
+      console.log(this.name+this.last+ ' is smile');
+  }
+
+  get name(){
+      return this._name;
+  }
+
+  set name(newN){
+       this._name = newN
+  }
+}
+         
+let bob = new Person('Bob',' whaaat');
+bob.walk();
+console.log(bob.name)
+
+let ward = new Person("ward"," ahmad")
+ward.smile();
+ward.name = "new ward"
+ward.walk()
+
+</script>

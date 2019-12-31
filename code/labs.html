@@ -1,0 +1,49 @@
+<script>
+//Make an ATM
+
+
+class ATM{
+    constructor(type){
+        this.type=type;
+        this.money=0;
+        this.transactionHistory=[];
+        this.backupAccount=0;
+    }
+    deposit(amount){
+        this.money+=amount;
+        this.transactionHistory.push("+"+amount);
+    }
+    withdraw(amount){
+        if (this.money>0){
+        if(amount>this.money){
+            
+            this.backupAccount-=amount;
+            this.transactionHistory.push("-"+amount+" from backup account.");            
+        }
+        e
+        lse{
+        this.money-=amount;
+        this.transactionHistory.push("-"+amount);
+        }
+    } //money>0
+    else{
+        this.backupAccount-=amount;
+        this.transactionHistory.push("-"+amount+" from backup account.");
+    }
+    }
+    showBalance(){
+        console.log("Balance="+ this.money);
+    }
+}
+let bankAccount=new ATM("Checking");
+bankAccount.deposit(500);
+bankAccount.showBalance();
+bankAccount.withdraw(250);
+bankAccount.showBalance();
+console.log(bankAccount.transactionHistory);
+bankAccount.backupAccount=500;
+bankAccount.withdraw(300);
+console.log(bankAccount.transactionHistory);
+//bankAccount.withdraw(300);
+console.log("Backup account balance="+bankAccount.backupAccount);
+</script>

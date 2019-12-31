@@ -1,0 +1,63 @@
+<script>
+class Animal {
+    constructor(name, type, age, sound) {
+      this.name = name;
+      this.type = type;
+      this.age = age;
+      this.sound = sound;
+    }
+  
+    getOlder() {
+      this.age += 1;
+      console.log(this.age);
+    }
+  
+    makeSound() {
+      return `${this.sound}! Hello, I'm a ${this.type}. And I'm ${this.age} years old.`;
+    }
+  }
+
+  let dog = new Animal("dog","m",15,"wow")
+  dog.getOlder()
+  dog.getOlder()
+  dog.getOlder()
+
+  console.log(dog.makeSound())
+
+  dog.getOlder()
+
+console.log(dog.makeSound())
+
+class Dog extends Animal {
+  constructor(name, age) {
+    super(name, 'Belgian Malinois', age, 'Barks'); // call the super class constructor and pass in required parameters
+  }
+
+  makeSoundd() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const bear = new Dog('Bear',13);
+console.log(bear.makeSound());
+
+bear.getOlder();
+console.log(bear.makeSound());
+
+
+bear.getOlder();
+console.log(bear.makeSound());
+
+class Cat extends Animal{
+    constructor(name,age){
+        super(name, 'cat type', age, "myaw") 
+    }
+    makeSounddd(){
+        console.log(`${this.name} myaw`)
+    }
+}
+
+let cat = new Cat("ejebt", 4)
+console.log(cat.makeSound())
+
+</script>
